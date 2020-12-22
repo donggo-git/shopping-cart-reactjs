@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +6,443 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffffbb;
 }
 
+*{
+  margin: 0;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+h1{
+  text-align: center;
+  padding-top: 20px;
+}
+h2{
+  margin: 20px auto;
+}
+button{
+  background-color:#ffffff;
+  border: 1px solid  #888383;
+  cursor: pointer;
+  padding: 5px;
+  max-width: 100px;
+  width: 100%;
+}
+.changePage-btn{
+  position: fixed;
+  bottom: 30px;
+  right: 30px ;
+  padding: 15px ;
+  border-radius: 50%;
+  background-color:#232f3e;
+  width: auto;
+  color: rgb(252, 198, 52);
+  font-size: 1.1rem;
+  display: flex;
+}
+.changePageQuantity{
+  position: absolute;
+  top: -15%;
+  left: 0;
+  font-size: 1rem;
+  color: #ffffff;
+  padding: 3px 5px;
+  border-radius: 50%;
+  background-color:  rgb(252, 198, 52);
+  height: auto;
+  width: auto;
+}
+/*css for product page*/
+
+.product-page{
+  background-color: #f5f4f4;
+  color: rgb(65, 65, 65);
+  height: auto;
+  min-height: 100vh;
+  overflow-y: hidden;
+}
+.grid{
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 0;
+  padding-bottom: 60px;
+}
+.grid-item{
+  background-color: #ffffff;
+  color: #232f3e;
+  margin: 0;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: auto;
+  border: 1px solid rgba(0,0,0,0.2);
+  transition: all 0.8s ;
+  width: auto;
+}
+.grid-item img{
+  max-height: 35vh;
+  max-width: 12vw;
+
+ align-self: center;
+}
+.product-detail{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+}
+.filter-form{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background-color: #ffffff;
+  color: #232f3e;
+  padding: 20px;
+  top:50%;
+  transform: translateY(-50%);
+}
+.filter-form input, .filter-form button,.filter-form select{
+  margin: 5px 0;
+}
+.item-btn{
+  margin: 5px 0;
+  display: flex;
+}
+.item-btn button{
+  width: auto;
+}
+.love-btn{
+  background-color: rgb(252, 198, 52);
+}
+nav{
+  background-color: #232f3e;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0;
+  justify-content: space-around;
+}
+nav ul{
+  list-style: none;
+  display: flex;
+ 
+ margin-left: auto;
+ margin-right: 3vw;
+}
+nav ul li{
+  margin: 0 1vw
+}
+nav a{
+  text-decoration: none;
+  color: #ffffff;
+}
+/* css for cart page*/
+.grid-cart{
+  justify-content: center;
+  align-items: flex-start;
+  width: auto;
+  margin: 30px;
+  grid-template-columns: auto;
+  margin-bottom: 0;
+  padding: 0%;
+}
+.cart-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 40vh;
+  min-width: 50vw;
+  margin: 0 auto;
+  padding: 10px;
+}
+.cart{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+.cart-detail{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: auto;
+}
+.cart-detail p{
+  max-width: 70%;
+}
+.price{
+  font-weight: bold;
+  height: 1rem;
+  align-self: stretch;
+}
+.price span{
+  height: auto;
+}
+.remove-btn{
+  margin-top: 10px;
+}
+.input-quantity{
+  margin-top: 10px;
+  width: 40px;
+}
+.total{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10vh 10px;
+  height: 25vh;
+  min-width: 50vw;
+  width: auto;
+  background-color:#232f3e;
+  color: #ffffff;
+  margin: 0 auto;
+  
+}
+.total p{
+  display: flex;
+  width: 100%;
+  
+}
+.total span{
+  margin: 0 0 0 auto ;
+}
+
+.discount{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.discount-input{
+  width:5rem;
+  background: none;
+  border: none;
+  border-bottom: solid 1px #ffffff;
+  color: #ffffff;
+  margin-right: 10px;
+}
+/*css login page*/
+.login-page{
+  height: 100vh;
+  width: 100vw;
+  background-color: #232f3e;
+  overflow: hidden;
+}
+.form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: rgb(247, 247, 247);
+  min-height: 40vh;
+  min-width: 22vw;
+  transform: translate(-50%,-50%);
+  padding: 2.9rem 3rem;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow: hidden;
+}
+.login-form{
+  opacity: 1;
+}
+.register-form{
+  opacity: 0;
+  transition: all 0.2s;
+  height: 0;
+  z-index: -1;
+}@keyframes change-height{
+  100%{
+      height: auto;
+      z-index: 1;
+      opacity: 1;
+  }
+}
+.form h2{
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+.txt-field{
+  position: relative;
+  margin: 1.4rem 0;
+  border-bottom: 1px solid rgb(139, 135, 135);
+  margin-bottom: 20px;
+}
+.txt-field span{
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 0;
+  top: 100%;
+  left: 0;
+  background-color:  rgb(4, 151, 209);
+  transition: all 0.2s;
+}
+.txt-field input{
+  height: 40px;
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 18px;
+  background: none;
+  outline: none;
+  padding:  0 6px;
+  color:rgb(77, 77, 77);
+}
+.userName input:focus ~ label, 
+.userName input:valid ~ label{
+  transform: translate(0, -180%);
+  font-size: 12px;
+  color: rgb(4, 151, 209);
+}
+.password input:focus ~ label, 
+.password input:valid ~ label{
+  transform: translate(0, -180%);
+  font-size: 12px;
+  color: rgb(4, 151, 209);
+}
+.txt-field input:focus ~ span{
+  width: 100%;
+}
+.txt-field label{
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  transform: translate(0,-50%);
+  pointer-events: none;
+  color:rgb(139, 135, 135);
+  transition: all 0.5s;
+}
+.remember-me{
+   margin-bottom: 30px;
+}
+.fake-check{
+   display: inline-block;
+   background-color: red;
+   height: 13px;
+   width: 13px;
+   border-radius: 20%;
+   position: relative
+}
+.fake-check :after{
+   height: 30px;
+   width: 30px;
+   border: 1px solid white;
+   position: absolute;
+   background: none;
+}
+.remember{
+   color:rgb(77, 77, 77);
+   margin-left: 10px;
+}
+input[type="checkbox"]{
+   color: pink;
+   background-color: pink;
+}
+.submit-btn{
+  width: 100%;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background-color:rgb(206, 76, 178);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.line-text{
+  margin-top: 20px;
+  text-align: center;
+  color: rgb(77, 77, 77);
+}
+.other-login-container{
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.other-login{
+  height: 30px;
+  width: 45%;
+  padding: 0px;
+  border: 1px solid rgb(230, 230, 230);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(77, 77, 77);
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #ffffff59;
+}
+.other-login p{
+  margin-left: 8px;
+  font-family: 'Roboto Condensed', sans-serif;;
+}
+.facebook{
+  color: rgb(59, 105, 189);;
+}
+#google{
+  position: relative;
+border-top: 3.8px solid #EA4335;
+border-right: 3.8px solid #4285F4;
+border-bottom: 3.8px solid #34A853;
+border-left: 3.8px solid #FBBC05;
+border-radius: 50%;
+background-color: #FFFFFF;
+width: 9px;
+height: 9px;
+padding: 0;
+}
+#google::before {
+  content: "";
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  right: -2px;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 4px;
+  background: #4285F4;
+}
+
+#google::after {
+  content: "";
+  z-index: 101;
+  position: absolute;
+  border-top: 6px solid transparent;
+  border-right: 10px solid #FFFFFF;
+  top: -3px;
+  right: -3.5px;
+  width: 0;
+  height: 0;
+}
+.sign-up{
+    font-size: 14px;
+    display: flex;
+    margin-top: 1.4rem;
+    text-align: center;
+    color: rgb(156, 156, 156);
+    justify-content: center;
+}
+
