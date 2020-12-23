@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdShoppingCart } from 'react-icons/md'
+import PaymentPlan from './payment-plan'
 class Cart extends React.Component {
     constructor(props) {
         super(props);
@@ -82,6 +83,7 @@ class Cart extends React.Component {
                 <button onClick={() => this.props.ChangePage()} className="changePage-btn">
                     <p className='changePageQuantity'>{this.props.totalQuantity}</p>
                     <MdShoppingCart /></button>
+                <PaymentPlan total={total} />
             </div>
         )
     }
