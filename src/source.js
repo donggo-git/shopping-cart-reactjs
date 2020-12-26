@@ -7,7 +7,7 @@ let source = [
         img: "https://th.bing.com/th/id/OP.fNZ0pkYWrCS13w474C474?w=160&h=150&rs=1&o=5&dpr=1.5&pid=21.1",
         brand: 'Apple',
         loved: false,
-        color: 'white'
+        color: 'blue'
     },
     {
         id: 'b',
@@ -66,7 +66,7 @@ let source = [
         img: "https://th.bing.com/th?id=OP.VKITs3y5Wm%2fDUQ474C474&w=160&h=150&rs=1&o=5&dpr=1.5&pid=21.1",
         brand: 'Apple',
         loved: false,
-        color: 'red'
+        color: 'blue'
     },
     {
         id: 'h',
@@ -84,7 +84,7 @@ let source = [
         img: "https://th.bing.com/th/id/OP.Li3h9JWhshAxmw474C474?w=160&h=150&rs=1&o=5&dpr=1.5&pid=21.1",
         brand: 'Samsung',
         loved: false,
-        color: 'white'
+        color: 'blue'
     }
     ,
     {

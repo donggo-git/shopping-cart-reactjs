@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './product.css';
 import './index.css';
+import './cart.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

@@ -44,7 +44,13 @@ class App extends React.Component {
     //change page
     const ChangePage = (cartPage) => {
       switch (cartPage) {
-        case 'product': this.setState({ page: 'cart' });
+        case 'product':
+          if (totalQuantity() > 0) {
+            this.setState({ page: 'cart' });
+          }
+          else {
+            alert("there isn't anything in the cart")
+          }
           break;
         default: this.setState({ page: 'product' });
           break;

@@ -1,0 +1,195 @@
+
+.product-page{
+    background-color: #f5f4f4;
+    color: rgb(65, 65, 65);
+    height: auto;
+    min-height: 100vh;
+    overflow-y: hidden;
+  }
+  .filter-form{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: #ffffff;
+    color: #232f3e;
+    padding: 0.5rem;
+    top:50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+   .filter-form button,.filter-form select{
+    width: 80%;
+    margin: 5px 0;
+  }
+  .select{
+    display: block;
+      font-size: 1rem;
+      font-family: sans-serif;
+      font-weight: 700;
+      color: #444;
+      line-height: 1.3;
+      padding: 0.2rem 0.5rem;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+      border: 1px solid #aaa;
+      
+      border-radius: 0.2rem;
+      
+      appearance: none;
+      background-color: #fff;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+        linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+      background-repeat: no-repeat, repeat;
+      background-position: right .7em top 50%, 0 0;
+      background-size: .65em auto, 100%
+  }
+  .select::-ms-expand {
+      display: none;
+  }
+  .select:hover {
+      border-color: #888;
+  }
+  .select:focus {
+      border-color: #aaa;
+      box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+      box-shadow: 0 0 0 3px -moz-mac-focusring;
+      color: #222;
+      outline: none;
+  }
+  
+    /* Customize the label (the container) */
+    .checkbox-list{
+    display: flex;
+    margin: 0.5rem 0 ;
+    justify-content: center;
+    align-items: center;
+  }
+  .checkbox-container {
+    height: auto;
+    display: block;
+    position: relative;
+    margin: 0 0.7rem;
+    
+    cursor: pointer;
+    font-size: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  /* Create a custom checkbox */
+  
+  .checkmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 1.2rem;
+    width: 1.2rem;
+    
+    border: 0.2rem solid  #ccc;
+    border-radius: 50%;
+  }
+  #black{
+    background-color:black;
+  }
+  #red{
+    background-color:red;
+  }
+  #white{
+    background-color:white;
+  }
+  #blue{
+    background-color: blue;
+  }
+  /* On mouse-over, add a grey background color */
+  .checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .checkbox-container input:checked ~ .checkmark {
+    border: 0.2rem solid #2196F3;
+  }
+  .love-btn{
+    background-color: rgb(252, 198, 52);
+    position: relative;
+    color: #444;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    
+  }
+ .love-btn:focus{
+     outline: none;
+ }
+  /* customize all products*/
+  .grid{
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 60px;
+  }
+  .grid-item{
+    background-color: #ffffff;
+    color: #232f3e;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 27.5vh;
+    border: 1px solid rgba(0,0,0,0.2);
+    transition: all 0.8s ;
+    width: auto;
+  }
+  .grid-item img{
+    max-height: 35vh;
+    max-width: 12vw;
+  
+   align-self: center;
+  }
+  .product-detail{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+  }
+
+  .item-btn{
+    margin: 5px 0;
+    display: flex;
+  }
+  .item-btn button{
+    width: auto;
+  }
+  @media(max-width: 800px){
+    .grid{
+        grid-template-columns: auto auto ;
+        
+    }
+    .grid-item{
+        align-items: center;
+        justify-content: center;
+        max-width: 30vw;
+    }
+    .grid-item img{
+        transform: scale(1.5) translateY(-25%);
+    }
+    .filter-form{
+        top: 20%;
+        z-index: 9999;
+    }
+  }
+ 

@@ -8,8 +8,8 @@ class Product extends React.Component {
             brand: 'all',
             love: false,
             styles: {
-                border: "none",
-                opacity: 1
+                border: 'none',
+                backgroundColor: 'rgb(252, 198, 52)'
             },
             color: [
                 {
@@ -22,6 +22,10 @@ class Product extends React.Component {
                 },
                 {
                     color: 'white',
+                    value: false
+                },
+                {
+                    color: 'blue',
                     value: false
                 }
             ],
@@ -77,10 +81,10 @@ class Product extends React.Component {
                 love: !pre.love
             }))
             if (this.state.love === false) {
-                this.setState({ styles: { border: 'none', opacity: 0.8, } })
+                this.setState({ styles: { border: '1.5px solid  rgb(252, 198, 52)', backgroundColor: '#ffffff', } })
             }
             else {
-                this.setState({ styles: { border: 'none', opacity: 1 } })
+                this.setState({ styles: { border: 'none', backgroundColor: 'rgb(252, 198, 52)' } })
             }
         }
         const getLoveItem = (e) => {
@@ -101,21 +105,13 @@ class Product extends React.Component {
             //let colorNeed = product.color;
             let colorAvailable = [...this.state.color].filter(color => color.value === true);
             let arr = colorAvailable.map(obj => Object.values(obj).filter(need => typeof need != 'boolean').join(''));
-            console.log(e.color);
             return arr.indexOf(e.color) > -1;
 
         }
         return (
 
             <div className="product-page">
-                <nav>
-                    <h3>Small Business </h3>
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">PRODUCT</a></li>
-                    </ul>
-                </nav>
+
                 {console.log(this.state.brand)}
                 <h1 >Shopping</h1>
                 <div className='filter-form'>
@@ -124,13 +120,26 @@ class Product extends React.Component {
                         <option value={Apple}>{Apple}</option>
                         <option value={Samsung}>{Samsung}</option>
                     </select>
-                    <button style={this.state.styles} onClick={() => setLoved()}
-                        className="love-btn">loved</button>
-                    <div>
-                        <input type="checkbox" name="color" value="red" onChange={(e) => setColor(e.target.value)} /> red
-                        <input type="checkbox" name="color" value="black" onChange={(e) => setColor(e.target.value)} /> black
-                        <input type="checkbox" name="color" value="white" onChange={(e) => setColor(e.target.value)} /> white
+                    <div className='checkbox-list'>
+                        <label className="checkbox-container red">
+                            <input type="checkbox" name="color" value="red" onChange={(e) => setColor(e.target.value)} />
+                            <span className='checkmark' id="red"></span>
+                        </label>
+                        <label className="checkbox-container black">
+                            <input type="checkbox" name="color" value="black" onChange={(e) => setColor(e.target.value)} />
+                            <span className='checkmark' id="black"></span>
+                        </label>
+                        <label className="checkbox-container white">
+                            <input type="checkbox" name="color" value="white" onChange={(e) => setColor(e.target.value)} />
+                            <span className='checkmark' id="white"></span>
+                        </label>
+                        <label className="checkbox-container blue">
+                            <input type="checkbox" name="color" value="blue" onChange={(e) => setColor(e.target.value)} />
+                            <span className='checkmark' id="blue"></span>
+                        </label>
                     </div>
+                    <button style={this.state.styles} onClick={() => setLoved()}
+                        className="love-btn">loved items</button>
                 </div>
                 <div className='grid'>
 

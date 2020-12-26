@@ -7,7 +7,9 @@ class Cart extends React.Component {
         this.state = {
             enterCode: '',
             submitCode: '',
-            discountCode: ['discount10%', 'discount20%']
+            discountCode: ['discount10%', 'discount20%'],
+            styles: { display: 'none' },
+
         }
     }
     render() {
@@ -35,11 +37,22 @@ class Cart extends React.Component {
                 }
             }
         }
+        const popupPaymentPlan = () => {
+            this.setState({
+                styles: { display: 'block' },
+                backgroundColor: { backgroundColor: 'rgba(0,0,0,0.5)' }
+            })
+        }
+        const closePopup = () => {
+            this.setState({
+                styles: { display: 'none' }
+            })
+        }
         let total = Math.round(totalPrice() * 100) / 100;
         let tax = Math.round(totalPrice() * 1.01 / 100 * 100) / 100;
         let subtotal = Math.round((total + tax) * 100) / 100;
         return (
-            <div className="cart">
+            <div className="cart" >
                 <h2>Shopping cart</h2>
                 <div className='grid grid-cart'>
 
@@ -48,7 +61,7 @@ class Cart extends React.Component {
                             <div className='grid-item cart-item' key={index}>
                                 <img src={product.img} alt={product.name} height="100%" />
                                 <div className='product-detail cart-detail'>
-                                    <div>
+                                    <div className='cart-content'>
                                         <h3>{product.name}</h3>
                                         <p>blablblbdbsdavsdviondv sdkv diovnasdv fin</p>
                                         <input
@@ -72,18 +85,22 @@ class Cart extends React.Component {
                 <div className="total">
                     <p>Total: <span>$ {total}</span></p>
                     <p>Tax: <span>$ {tax}</span></p>
-                    <p>Subtotal: <span>$ {discount()}</span></p>
                     <div className="discount">
-                        <input className="discount-input" type="text" placeholder="discount code" onChange={(e) => handleEnterCode(e.target.value)} value={this.state.enterCode}></input>
                         <button onClick={() => handleSubmitCode()}>submit</button>
+                        <input className="discount-input" type="text" placeholder="discount code" onChange={(e) => handleEnterCode(e.target.value)} value={this.state.enterCode}></input>
+
                     </div>
-                    <button>Pay now</button>
-                    <button>Payment plan</button>
+                    <p className='subtotal'>Subtotal: <span>$ {discount()}</span></p>
+                    <div className='pay-btn'>
+                        <button>Pay now</button>
+                        <button onClick={() => popupPaymentPlan()}>Payment plan</button>
+                    </div>
                 </div>
                 <button onClick={() => this.props.ChangePage()} className="changePage-btn">
                     <p className='changePageQuantity'>{this.props.totalQuantity}</p>
                     <MdShoppingCart /></button>
-                <PaymentPlan total={total} />
+                <PaymentPlan total={total} styles={this.state.styles} closePopup={closePopup} />
+                <div className='bg-modal' style={this.state.styles}></div>
             </div>
         )
     }
