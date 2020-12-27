@@ -2,7 +2,7 @@ import React from 'react';
 import Cart from './cart';
 import source from './source'
 import Product from './product';
-import Login from './Login';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state = {
       source: source,
       cart: [],
-      page: '',
+      page: 'product',
       userName: ['Dong', 'Todoroki'],
       password: ['Dongpro12', 'HIGH&LOWseason2']
     }
@@ -73,18 +73,12 @@ class App extends React.Component {
       this.setState({ source: newSource })
       console.log(findItem.loved)
     }
-    const handleLogin = (userName, password) => {
 
-      if ((this.state.userName.indexOf(userName) === this.state.password.indexOf(password)) && (this.state.userName.indexOf(userName) !== -1)) {
-        this.setState({ page: 'product' });
-
-      }
-    }
     return (
       <div>
 
 
-        {this.state.page === '' && <Login handleLogin={handleLogin} />}
+
         {this.state.page === 'product' && <Product
           product={this.state.source} addToCart={addToCart} set_love={set_love}
           ChangePage={() => ChangePage(this.state.page)} totalQuantity={totalQuantity()} source={this.state.source} />}

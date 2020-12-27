@@ -11,7 +11,7 @@ class PaymentPlan extends React.Component {
         return (
             <div className='payment-plan' style={this.props.styles}>
                 <GrClose className='close-btn' onClick={() => this.props.closePopup()} />
-                <h3>Your total is {total}</h3>
+                <h3>Your total is ${total}</h3>
                 <ul>
                     <li><p>payment plan: ${PaymentPlantFirst.pay}/month
                     for {PaymentPlantFirst.howLong} months</p>
