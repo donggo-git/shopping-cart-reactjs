@@ -29,9 +29,7 @@ class Product extends React.Component {
                     value: false
                 }
             ],
-            love_btn: {
-                backgroundColor: 'red'
-            }
+
         }
     }
     render() {

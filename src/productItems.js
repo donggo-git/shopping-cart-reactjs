@@ -8,7 +8,7 @@ class Grid_item extends React.Component {
         }
     }
     render() {
-        let styleLove_btn = this.props.love === this.props.product.loved ? { backgroundColor: "#ffffff", color: 'rgb(255, 20, 147)' }
+        let styleLove_btn = this.state.love === false ? { backgroundColor: "#ffffff", color: 'rgb(255, 20, 147)' }
             : { backgroundColor: 'rgb(255, 20, 147)', color: '#ffffff' };
         const StyleLove_btn = (e) => {
             let newLove = !this.state.love
