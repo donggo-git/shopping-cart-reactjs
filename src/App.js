@@ -12,7 +12,8 @@ class App extends React.Component {
       cart: [],
       page: 'product',
       userName: ['Dong', 'Todoroki'],
-      password: ['Dongpro12', 'HIGH&LOWseason2']
+      password: ['Dongpro12', 'HIGH&LOWseason2'],
+      styleForRemoveCart: false
     }
   }
   render() {
@@ -34,8 +35,13 @@ class App extends React.Component {
     }
     //Remove item from cart
     const RemoveFromCart = (productRemove) => {
+      this.setState(pre => ({
+        styleForRemoveCart: !pre.styleForRemoveCart
+      }))
+      setTimeout(() => {
+        this.setState(pre => ({ cart: pre.cart.filter((product) => product !== productRemove) }))
+      }, 1000);
 
-      this.setState(pre => ({ cart: pre.cart.filter((product) => product !== productRemove) }))
     }
     //calculate total quantity in the cart
     const totalQuantity = () => {
@@ -84,7 +90,9 @@ class App extends React.Component {
           ChangePage={() => ChangePage(this.state.page)} totalQuantity={totalQuantity()} source={this.state.source} />}
         {this.state.page === 'cart' && <Cart cart={this.state.cart}
           RemoveProduct={RemoveFromCart} setQuantity={setQuantity}
-          ChangePage={() => ChangePage(this.state.page)} totalQuantity={totalQuantity()} />}
+          ChangePage={() => ChangePage(this.state.page)} totalQuantity={totalQuantity()}
+          styleForRemoveCart={this.state.styleForRemoveCart}
+        />}
       </div>
     );
   }

@@ -58,7 +58,15 @@ class Cart extends React.Component {
 
                     {
                         this.props.cart.map((product, index) => (
-                            <div className='grid-item cart-item' key={index}>
+                            <div className='grid-item cart-item' style={this.props.styleForRemoveCart ?
+                                {
+                                    animationName: 'Remove',
+                                    animationDuration: '0.9s'
+                                } :
+                                {
+                                    animationName: 'none'
+                                }
+                            } key={index}>
                                 <img src={product.img} alt={product.name} height="100%" />
                                 <div className='product-detail cart-detail'>
                                     <div className='cart-content'>

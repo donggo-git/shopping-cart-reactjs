@@ -60,6 +60,12 @@
   .remove-btn:hover{
     background-color:rgb(228, 24, 24);
   }
+  @keyframes Remove{
+    100%{
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+  }
   .input-quantity{
     margin-top: 10px;
     width: 40px;
