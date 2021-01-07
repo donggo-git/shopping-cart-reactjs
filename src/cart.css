@@ -19,6 +19,9 @@
     padding: 10px;
     
   }
+  .cart-item>div{
+    display: flex;
+  }
   .cart{
     display: flex;
     flex-direction: column;

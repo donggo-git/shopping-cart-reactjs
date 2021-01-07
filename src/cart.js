@@ -1,6 +1,7 @@
 import React from 'react';
 import { MdShoppingCart } from 'react-icons/md'
 import PaymentPlan from './payment-plan'
+import CartItem from "./cartItem";
 class Cart extends React.Component {
     constructor(props) {
         super(props);
@@ -58,34 +59,13 @@ class Cart extends React.Component {
 
                     {
                         this.props.cart.map((product, index) => (
-                            <div className='grid-item cart-item' style={this.props.styleForRemoveCart ?
-                                {
-                                    animationName: 'Remove',
-                                    animationDuration: '0.9s'
-                                } :
-                                {
-                                    animationName: 'none'
-                                }
-                            } key={index}>
-                                <img src={product.img} alt={product.name} height="100%" />
-                                <div className='product-detail cart-detail'>
-                                    <div className='cart-content'>
-                                        <h3>{product.name}</h3>
-                                        <p>blablblbdbsdavsdviondv sdkv diovnasdv fin</p>
-                                        <input
-                                            value={product.quantity}
-                                            onChange={(e) => { this.props.setQuantity(product, e.target.value) }}
-                                            type="number"
-                                            className="input-quantity"
-                                        />
-                                        <div><button onClick={() => this.props.RemoveProduct(product)} className="remove-btn">remove</button></div>
-                                    </div>
-
-
-                                    <p className="price">$<span>{Math.round(product.price * product.quantity * 100) / 100}</span></p>
-
-
-                                </div>
+                            <div className='grid-item cart-item'
+                                key={index}>
+                                <CartItem
+                                    product={product}
+                                    RemoveProduct={this.props.RemoveProduct}
+                                    setQuantity={this.props.setQuantity}
+                                />
                             </div>
                         ))
                     }
