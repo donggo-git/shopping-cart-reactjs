@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdShoppingCart } from 'react-icons/md'
-import ReactCSSTransitionGroup from 'react-transition-group';
+
 import PaymentPlan from './payment-plan'
 import CartItem from "./cartItem";
 
@@ -78,20 +78,20 @@ class Cart extends React.Component {
             <div className="cart" >
                 <h2>Shopping cart</h2>
                 <div className='grid grid-cart' >
-                    <ReactCSSTransitionGroup>
-                        {
-                            this.props.cart.map((product) => (
 
-                                <CartItem
-                                    product={product}
-                                    TransitionForWholeCart={TransitionForWholeCart}
-                                    setQuantity={this.props.setQuantity}
-                                    key={product.id}
-                                />
+                    {
+                        this.props.cart.map((product) => (
 
-                            ))
-                        }
-                    </ReactCSSTransitionGroup>
+                            <CartItem
+                                product={product}
+                                TransitionForWholeCart={TransitionForWholeCart}
+                                setQuantity={this.props.setQuantity}
+                                key={product.id}
+                            />
+
+                        ))
+                    }
+
                 </div>
                 <div className="total" >
                     <p>Total: <span>$ {total}</span></p>
