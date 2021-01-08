@@ -3,15 +3,20 @@ class CartItem extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            styleForRemoveCart: false
+            styleForRemoveCart: { 'animationName': 'none', 'animationDuration': '0.5s' }
         }
     }
     render() {
-        const styleForRemoveCart = () => {
+        const styleForRemoveCart = (product) => {
+            this.setState({
+                styleForRemoveCart: { 'animationName': 'Remove', 'animationDuration': '1s' }
+                //make transition for cart item
+            })
+            this.props.TransitionForWholeCart(product)
 
         }
         return (
-            <div>
+            <div style={this.state.styleForRemoveCart} className='grid-item cart-item'>
                 <img src={this.props.product.img} alt={this.props.product.name} height="100%" />
                 <div className='product-detail cart-detail'>
                     <div className='cart-content'>
@@ -23,7 +28,7 @@ class CartItem extends React.Component {
                             type="number"
                             className="input-quantity"
                         />
-                        <div><button onClick={() => this.props.RemoveProduct(this.props.product)} className="remove-btn">remove</button></div>
+                        <div><button onClick={() => styleForRemoveCart(this.props.product)} className="remove-btn">remove</button></div>
                     </div>
 
 

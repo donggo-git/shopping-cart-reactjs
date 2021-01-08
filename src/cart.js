@@ -1,7 +1,9 @@
 import React from 'react';
 import { MdShoppingCart } from 'react-icons/md'
+import ReactCSSTransitionGroup from 'react-transition-group';
 import PaymentPlan from './payment-plan'
 import CartItem from "./cartItem";
+
 class Cart extends React.Component {
     constructor(props) {
         super(props);
@@ -10,7 +12,9 @@ class Cart extends React.Component {
             submitCode: '',
             discountCode: ['discount10%', 'discount20%'],
             styles: { display: 'none' },
-
+            styleForCart: {
+                margin: '30px 30px 0 30px'
+            }
         }
     }
     render() {
@@ -49,28 +53,47 @@ class Cart extends React.Component {
                 styles: { display: 'none' }
             })
         }
+        const TransitionForWholeCart = (product) => {
+            //make transition for the whole cart when remove item
+            console.log(this.props.cart.length)
+            this.setState({
+                styleForCart: {
+                    margin: `${-this.props.cart.length * 50}px 30px 0 30px`
+                }
+            })
+            this.props.RemoveProduct(product);
+
+            setTimeout(() => {
+                this.setState({
+                    styleForCart: {
+                        margin: `30px 30px 0 30px`
+                    }
+                })
+            }, 500);
+        }
         let total = Math.round(totalPrice() * 100) / 100;
         let tax = Math.round(totalPrice() * 1.01 / 100 * 100) / 100;
         let subtotal = Math.round((total + tax) * 100) / 100;
         return (
             <div className="cart" >
                 <h2>Shopping cart</h2>
-                <div className='grid grid-cart'>
+                <div className='grid grid-cart' >
+                    <ReactCSSTransitionGroup>
+                        {
+                            this.props.cart.map((product) => (
 
-                    {
-                        this.props.cart.map((product, index) => (
-                            <div className='grid-item cart-item'
-                                key={index}>
                                 <CartItem
                                     product={product}
-                                    RemoveProduct={this.props.RemoveProduct}
+                                    TransitionForWholeCart={TransitionForWholeCart}
                                     setQuantity={this.props.setQuantity}
+                                    key={product.id}
                                 />
-                            </div>
-                        ))
-                    }
+
+                            ))
+                        }
+                    </ReactCSSTransitionGroup>
                 </div>
-                <div className="total">
+                <div className="total" >
                     <p>Total: <span>$ {total}</span></p>
                     <p>Tax: <span>$ {tax}</span></p>
                     <div className="discount">
