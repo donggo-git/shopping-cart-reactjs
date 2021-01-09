@@ -18,7 +18,15 @@
     width: auto;
     margin: 0 auto;
     padding: 10px;
-    
+    transition: all 0.5s;
+  }
+  .example-leave {
+    opacity: 1;
+  }
+  
+  .example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
   }
   .cart-item>div{
     display: flex;
@@ -27,7 +35,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
+    
     height: auto;
     padding: 0;
     margin: 0;
@@ -88,7 +96,7 @@
     background-color:#232f3e;
     color: #ffffff;
     margin: 0 auto;
-    
+
   }
   .total p{
     display: flex;

@@ -81,7 +81,6 @@ class Cart extends React.Component {
 
                     {
                         this.props.cart.map((product) => (
-
                             <CartItem
                                 product={product}
                                 TransitionForWholeCart={TransitionForWholeCart}

@@ -40,7 +40,7 @@ class App extends React.Component {
       }))
       setTimeout(() => {
         this.setState(pre => ({ cart: pre.cart.filter((product) => product !== productRemove) }))
-      }, 1000);
+      }, 500);
 
     }
     //calculate total quantity in the cart
