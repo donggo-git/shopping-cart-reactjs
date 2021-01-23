@@ -3,7 +3,7 @@ class CartItem extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            styleForRemoveCart: { 'animationName': 'none', 'animationDuration': '0.5s' }
+            styleForRemoveCart: { 'animationName': 'none', 'animationDuration': '0.8s' }
         }
     }
     render() {

@@ -31,6 +31,7 @@
   .cart-item>div{
     display: flex;
   }
+
   .cart{
     display: flex;
     flex-direction: column;
@@ -211,7 +212,15 @@
       min-width: 100vw;
       padding: 10px 0;
     }
+      .cart-item>img{
+    height: 4rem;
+    width: 3rem;
+  }
     .total{
       width: calc(100vw - 20px);
     }
+    .payment-plan{
+      width: 90%;
+    }
+    
   }
